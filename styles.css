@@ -1,0 +1,363 @@
+/* General Styling */
+body {
+    background-color: black;
+}
+
+.ghostala {
+    height: 50px;
+    width: 50px;
+}
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 100px;
+}
+.navbar a {
+    color: white; /* Set the link color to white */
+    text-decoration: none; /* Remove underline from links */
+}
+.navbar li {
+    color: white;
+    list-style: none;
+    margin-top: 10px;
+    font-weight: 800;
+    font-size: 18px;
+    margin-bottom: 15px;
+    position: relative;
+    bottom: -3px;
+}
+
+.navbar li::after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: -4px; /* Adjust this value to control the gap between text and underline */
+    width: 100%;
+    height: 5px;
+    background-color: darkgray;
+}
+
+/* Add this to style the dropdown */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color:black;
+    min-width: 200px;
+    min-height: 200px;
+    box-shadow: 0px 8px 16px 0px white;
+    z-index: 1;
+    padding: 20px;
+}
+
+.dropdown-content a {
+    color:white
+    padding: 50px 16px;
+    text-decoration : none;
+    display : block;
+}
+
+.dropdown-content a:hover {
+    background-color:gray;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.slider-container {
+    display: flex;
+    justify-content: center; /* Horizontally center-align the images */
+    align-items: center; /* Vertically center-align the images */
+    height: 100vh; /* Adjust this to your desired height */
+}
+
+
+.slide {
+    max-width: 100%; /* Make sure images don't exceed their original size */
+    height: auto;
+   width: 80%; /* Adjust this value to increase or decrease image width */
+    margin: 0 auto; /* Center-align the images horizontally within the slider */
+}
+.slider-container img{
+    width: 400px;
+    height: 400px;
+    margin-left: 500px;
+}
+#contract{
+    background-color: black;
+    color: white;
+    margin-left: 150px;
+    font-size: 30px;
+}
+.box{
+    background-color: rgb(59, 53, 53);
+    width: 700px;
+    height: 80px;
+   margin-top: -40px;
+   
+}
+
+.copy-text {
+    position: relative;
+    text-align: center;
+    display: inline-block;
+    font-size: 25px;
+    padding-left: 20px;
+  }
+  #copy-button {
+    background-color: gray;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 12px;
+    font-size: 20px;
+  margin-left: 60px;
+}
+.copy-text:hover #copy-button {
+    display: inline-block; /* Show the button when .copy-text is hovered */
+}
+
+#ktulu{
+    background-color: black;
+    padding-top: 200px;
+}
+#ktulu img{
+    height: 200px;
+    width: 200px;
+    padding-left: 650px;
+}
+/* Add your existing styles here */
+
+.centered-h1 {
+    text-align: center;
+    display: block;
+    color: white;
+    font-size: 50px;
+    margin: 0 auto; /* Center the element horizontally */
+    font-family: Rubik, sans-serif;
+    padding-top: 30px;
+}
+
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(10px); /* Initial offset to create a sliding-up effect */
+    }
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+#ktulu p{
+    text-align: center;
+    color: white;
+    font-size: 25px;
+    padding-top: 100px;
+}
+  
+.roadmap{
+    padding-top: 200px;
+    background-color: black;
+}
+.roadmap h1{
+    text-align: center;
+    
+}
+.roadmap img{
+    height: 200px;
+    width: 200px;
+    padding-left: 650px;
+}
+ 
+.cont{
+margin-top: 50px;
+width: 100%;
+}
+.yellow {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    gap:20px; /* Adjust the gap between images as needed */
+    margin: 0 auto; /* Center the container */
+    max-width: 1000px; /* Set a maximum width for the container */
+}
+.yellow img{
+    height: 400px;
+    width: 350px;
+    max-width: 400px;
+    max-height: 400px;
+    margin: 0;
+    padding:0px;
+    
+}
+
+.yellow .row {
+    display: flex;
+    flex-direction: column;
+
+    gap: 20px; /* Adjust the gap between images and headings */
+    
+    width: 100%;
+    opacity: 0; /* Start with headings hidden */
+    transform: translateY(30px); /* Move headings down initially */
+    animation: fadeInUp 0.5s ease forwards; /* Apply animation */
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.phase{
+    padding-top: -40px;
+}
+h2{
+    color: white;
+    text-align: center;
+    font-family: Rubik,sans-serif;
+    font-size: 40px;
+
+}
+/* Apply the animation to headings */
+.yellow .row h2 {
+    opacity: 0; /* Start with headings hidden */
+    transform: translateY(20px); /* Move headings down initially */
+    animation: fadeInUp 0.5s ease forwards; /* Apply animation */
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.r {
+    height: 200px;
+    width:200px;
+    max-width: 100%; /* Ensure images don't exceed container width */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    border: 1px solid white;
+    justify-content: space-between;
+    gap: 20px;
+    position: relative;
+
+}
+.lists li{
+    color:white;
+    font-family: Space Mono,sens-serif;
+    padding: 2px;
+}
+
+#ring{
+    padding-top: 200px;
+}
+.row p{
+    color: white;
+    font-family: "Space Mono" , sens-serif;
+    padding: 12px;
+    letter-spacing: 2px;
+    word-spacing: 3px;
+}
+.box2 {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+     /* Adjust the gap between images as needed */
+    margin: 0 auto; /* Center the container */
+    max-width: 1000px; /* Set a maximum width for the container */
+    padding-top: 50px;
+    gap: 20px;
+}
+.row1{
+    display: flex;
+    flex-direction:column;
+    transition: opacity 1s ease;
+
+}
+.row1 img{
+    height:200px;
+    width:200px;
+    max-width: 400px;
+    max-height: 400px;
+    margin: 0;
+    padding:0px;
+    border: 1px solid white;
+    justify-content: space-between;
+    transition: opacity 1s ease,transform 0.3s ease;
+ 
+    
+}
+.row1:hover{
+    opacity: 0.8;
+}
+
+.row1 img:hover {
+    animation: fadeEffect 1s alternate infinite; /* Apply animation */
+}
+
+@keyframes fadeEffect {
+    from {
+        opacity: 1; /* Start with full opacity */
+    }
+    to {
+        opacity: 0.5; /* Fade to half opacity */
+    }
+}
+.row1 img:hover {
+    animation: scaleAnimation 1s alternate infinite; /* Apply animation */
+}
+
+@keyframes scaleAnimation {
+    from {
+        transform: scale(1); /* Normal size */
+    }
+    to {
+        transform: scale(1.2); /* Slightly larger size */
+    }
+}
+.row1 h3{
+    color: white;
+    text-align: center;
+}
+#foot{
+    width:90%;
+    height: 500px;
+    border: 1px solid white ;
+    border-radius: 2px;
+    margin-top: 200px;
+    margin-left: 70px;
+   
+}
+
+.last img{
+    height: 300px;
+    width: 300px;
+    justify-content: center;
+    margin-left: 550px;
+    margin-top: 50px;
+    transition: opacity 1s ease;
+}
+.last img:hover{
+   opacity: 0.5;
+}
+.last p{
+  color: white;
+  font-family: "Space Mono",sens-serif;
+  text-align: center;
+  letter-spacing: 2px;
+  word-spacing: 3px;
+  font-size: 25px;
+}
