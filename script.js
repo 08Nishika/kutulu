@@ -1,3 +1,5 @@
+var interva = ""; // for storing the current setinterval 
+
 document.addEventListener("DOMContentLoaded", function() {
     const slides = document.querySelectorAll(".slide");
     let currentIndex = 0;
@@ -70,27 +72,39 @@ document.addEventListener("DOMContentLoaded", function () {
 const headings = document.querySelectorAll('.centered-h1');
 
 // Function to animate text display
-function animateText(element) {
-    const text = element.textContent;
-    element.textContent = ''; // Clear the original text
 
+function animateText(element) {
+
+    const text = element.querySelector('span').textContent;
+  
+    let h1 = element.querySelector('h1');
+    h1.textContent = "";
     let currentIndex = 0;
 
-    function addNextLetter() {
+    interva = setInterval(() => {
         if (currentIndex < text.length) {
-            element.textContent += text[currentIndex];
+            h1.textContent += text[currentIndex];
             currentIndex++;
-            setTimeout(addNextLetter,50); // Adjust the delay time as needed
+         
         }
-    }
 
-    addNextLetter();
+
+        else{
+            clearInterval (interva);
+        }
+      
+    }, 70);
+        
+    
+
+   
 }
 
+
 // Loop through each heading and apply the animation
-headings.forEach(heading => {
-    animateText(heading);
-});
+// headings.forEach(heading => {
+//     animateText(heading);
+// });
 // Smooth scroll function
 function smoothScroll(target) {
     const targetElement = document.querySelector(target);
@@ -126,3 +140,38 @@ function addAnimationAgain() {
 // Call the function initially and set it on an interval
 addAnimationAgain();
 setInterval(addAnimationAgain, 5000); // Adjust the interval time as needed
+
+
+
+
+/* Function for running the animation again after scrolling on the headings */
+
+const headingElements = document.querySelectorAll('.roadmap');
+
+
+// checking if the element is coming in the view 
+function isElementInViewport(el) {
+  const rect = el.getBoundingClientRect();
+  return (
+    rect.top >= 0 &&
+    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+  );
+}
+
+function animateOnScroll() {
+    headingElements.forEach((element) => {
+    if (isElementInViewport(element)) {
+
+        if (interva != ""){
+            clearInterval(interva);
+        }
+    
+
+      animateText (element);
+    }
+  });
+}
+
+
+// checking the scroll 
+window.addEventListener('scroll', animateOnScroll);
